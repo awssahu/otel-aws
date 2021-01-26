@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo yum update -y
+sudo yum install java -y
+wget https://aws-otel-collector.s3.amazonaws.com/amazon_linux/amd64/latest/aws-otel-collector.rpm
+sudo rpm -Uvh  ./aws-otel-collector.rpm
+sudo /opt/aws/aws-otel-collector/bin/aws-otel-collector-ctl -a start
